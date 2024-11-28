@@ -1,4 +1,3 @@
-// my-text-component.js
 class MyTextComponent extends HTMLElement {
     constructor() {
         super();
@@ -28,6 +27,7 @@ class MyTextComponent extends HTMLElement {
         const elements = this.shadowRoot.querySelectorAll('h1, p');
         elements.forEach(element => {
             element.addEventListener('focus', () => this.speak(element.textContent));
+            element.addEventListener('click', () => this.speak(element.textContent)); // Добавлено для обработки клика
         });
     }
 
